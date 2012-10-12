@@ -12,7 +12,7 @@ turntable.addEventListener('message', function (m) {
         djId = m.room.metadata.current_dj;
     }
     if (m.command == 'newsong' || m.command == 'rem_dj') {
-        if (djs().indexOf(turntable.user.id) == djs().indexOf(djId) + 1) {
+        if ((djs().indexOf(turntable.user.id) == djs().indexOf(djId) + 1)||djs().indexOf(turntable.user.id) == 0 && djs().indexOf(djId) == djs().indexOf(djs().length-1)) {
             alert("It's your turn to connect!");
         }
     }
